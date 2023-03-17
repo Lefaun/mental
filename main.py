@@ -1,93 +1,260 @@
-import time  # to simulate a real time data, time loop
 import pandas as pd
-import numpy as np  # np mean, np random
-import pandas as pd  # read csv, df manipulation
-import plotly.express as px  # interactive charts
-import streamlit as st  # data web app development
-import pandas as pd
-st.set_page_config(
-    page_title="Real-Time - Data Science Dashboard",
-    page_icon="",
-    layout="wide",
+import streamlit as st
+import numpy as np
+import plotly.figure_factory as ff
+import plotly.figure_factory as px
+import plotly.figure_factory as line
+from pandas.api.types import (
+    is_categorical_dtype,
+    is_datetime64_any_dtype,
+    is_numeric_dtype,
+    is_object_dtype,
 )
-import pandas as pd
-df = pd.read_csv('MentalHealth.csv')
-#df = pd.read_csv('https://query.data.world/s/edvqfu4ea2ap6sbmr7ht2szxjc2mij')
-placeholder = st.empty()
-#Title
-st.title = "Real time computer Science Dashboard 1"
 
-job_filter = st.selectbox("Select the Job", pd.unique(df["Sexo"]))
+st.title("Esatisticas da Saúde Mental no Período de 2004 a 2020 ")
 
-for seconds in range(200):
-    df["Sexo"] = df["Sexo"] * np.random.choice(range(1, 5))
-    df["Total"] = df["Total"] * np.random.choice(range(1, 5))
+st.write(
+    """Estudo Efetuado pelo INE - Instiituto Nacional de Estatística sobre o estado da Saúde Mental dos Portugueses 
+    divídidos por Género, Faixa Étaria e Ocupação Profissional
+    """
+)
+def filter_data(df: pd.DataFrame) ->pd.DataFrame:
+    options = st.multiselect("escolha a Cena ", options=df.columns)
+    st.write('Voçê selecionou as seguintes opções', options)
 
-    # creating KPIs
-    avg_age = np.mean(df["Total"])
+def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Adds a UI on top of a dataframe to let viewers filter columns
+    Args:
+        df (pd.DataFrame): Original dataframe
+    Returns:
+        pd.DataFrame: Filtered dataframe
+    """
 
-    count_married = int(
-        df[(df["Grupo etário"] == "Grupo etário")]["Grupo etário"].count()
-        + np.random.choice(range(1, 1000))
+    modify = st.text_input(
+        "Escolha os Fatores 👇", df.columns,
+        #label_visibility=st.session_state.visibility,
+        #disabled=st.session_state.disabled,
+        #placeholder=st.session_state.placeholder,
+
+    )
+    if not modify:
+        return df
+
+    df = df.copy()
+
+    # Try to convert datetimes into a standard format (datetime, no timezone)
+    for col in df.columns:
+        if is_object_dtype(df[col]):
+            try:
+                df[col] = pd.to_datetime(df[col])
+            except Exception:
+                pass
+
+        if is_datetime64_any_dtype(df[col]):
+            df[col] = df[col].dt.tz_localize(None)
+
+    modification_container = st.container()
+
+    with modification_container:
+        to_filter_columns = st.multiselect("Filter dataframe on", df.columns)
+        for column in to_filter_columns:
+            left, right = st.columns((1, 20))
+            left.write("↳")
+            # Treat columns with < 10 unique values as categorical
+            if is_categorical_dtype(df[column]) or df[column].nunique() < 10:
+                user_cat_input = right.multiselect(
+                    f"Values for {column}",
+                    df[column].unique(),
+                    default=list(df[column].unique()),
+                )
+                df = df[df[column].isin(user_cat_input)]
+            elif is_numeric_dtype(df[column]):
+                _min = float(df[column].min())
+                _max = float(df[column].max())
+                step = (_max - _min) / 100
+                user_num_input = right.slider(
+                    f"Values for {column}",
+                    _min,
+                    _max,
+                    (_min, _max),
+                    step=step,
+                )
+                df = df[df[column].between(*user_num_input)]
+            elif is_datetime64_any_dtype(df[column]):
+                user_date_input = right.date_input(
+                    f"Values for {column}",
+                    value=(
+                        df[column].min(),
+                        df[column].max(),
+                    ),
+                )
+                if len(user_date_input) == 2:
+                    user_date_input = tuple(map(pd.to_datetime, user_date_input))
+                    start_date, end_date = user_date_input
+                    df = df.loc[df[column].between(start_date, end_date)]
+            else:
+                user_text_input = right.text_input(
+                    f"Substring or regex in {column}",
+                )
+                if user_text_input:
+                    df = df[df[column].str.contains(user_text_input)]
+
+    return df
+
+def filter_dataframe2(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Adds a UI on top of a dataframe to let viewers filter columns
+    Args:
+        df (pd.DataFrame): Original dataframe
+    Returns:
+        pd.DataFrame: Filtered dataframe
+    """
+    modify2 = st.text_input(
+        "Escolha os Fatores 👇",
+        #label_visibility=st.session_state.visibility,
+        #disabled=st.session_state.disabled,
+        #placeholder=st.session_state.placeholder,
     )
 
-    balance = np.mean(df["Total"])
+    if not modify2:
+        return df
 
-    with placeholder.container():
-        # create three columns
-        kpi1, kpi2, kpi3 = st.columns(3)
+    df = df.copy()
 
-        # fill in those three columns with respective metrics or KPIs
-        kpi1.metric(
-            label="Sexo ⏳",
-            value=round(avg_age),
-            delta=round(avg_age) - 10,
-        )
+    # Try to convert datetimes into a standard format (datetime, no timezone)
+    for col in df.columns:
+        if is_object_dtype(df[col]):
+            try:
+                df[col] = pd.to_datetime(df[col])
+            except Exception:
+                pass
 
-        kpi2.metric(
-            label="Total 💍",
-            value=int(count_married),
-            delta=-10 + count_married,
-        )
+        if is_datetime64_any_dtype(df[col]):
+            df[col] = df[col].dt.tz_localize(None)
 
-        kpi3.metric(
-            label="Grupo etário",
-            value=f"$ {round(balance, 2)} ",
-            delta=-round(balance / count_married) * 100,
-        )
+    modification_container = st.container()
 
-import altair as alt
-fig_col1, fig_col2 = st.columns(2)
-with fig_col1:
-    st.title = "Location ID"
-    st.markdown("Location ID")
-    chart_data = pd.DataFrame(
-        np.random.randn(20, 3),
-        columns=['Sexo', 'Total', 'Grupo etário'])
+    with modification_container:
+        to_filter_columns = st.multiselect("Selecione os Riscos", df.columns)
+        for column in to_filter_columns:
+            left, right = st.columns((1, 20))
+            left.write("↳")
+            # Treat columns with < 10 unique values as categorical
+            if is_categorical_dtype(df[column]) or df[column].nunique() < 10:
+                user_cat_input = right.multiselect(
+                    f"Values for {column}",
+                    df[column].unique(),
+                    default=list(df[column].unique()),
+                )
+                df = df[df[column].isin(user_cat_input)]
+            elif is_numeric_dtype(df[column]):
+                _min = float(df[column].min())
+                _max = float(df[column].max())
+                step = (_max - _min) / 100
+                user_num_input = right.slider(
+                    f"Values for {column}",
+                    _min,
+                    _max,
+                    (_min, _max),
+                    step=step,
+                )
+                df = df[df[column].between(*user_num_input)]
+            elif is_datetime64_any_dtype(df[column]):
+                user_date_input = right.date_input(
+                    f"Values for {column}",
+                    value=(
+                        df[column].min(),
+                        df[column].max(),
+                    ),
+                )
+                if len(user_date_input) == 2:
+                    user_date_input = tuple(map(pd.to_datetime, user_date_input))
+                    start_date, end_date = user_date_input
+                    df = df.loc[df[column].between(start_date, end_date)]
+            else:
+                user_text_input = right.text_input(
+                    f"Substring or regex in {column}",
+                )
+                if user_text_input:
+                    df = df[df[column].str.contains(user_text_input)]
 
-    c = alt.Chart(chart_data).mark_circle().encode(
-        x='Sexo', y='Total', size='Grupo etário', color='Grupo etário', tooltip=['Sexo', 'Total', 'Grupo  etário'])
+    return df
 
-    st.altair_chart(c, use_container_width=True)
+#df = pd.read_csv(
+    #"MentalHealth.csv"
+#)
+#st.dataframe(filter_dataframe(df))
+
+df = pd.read_csv(
+    "Mentalhealth3.csv"
+)
+
+st.dataframe(filter_dataframe2(df))
+
+chart_data = pd.DataFrame(
+    np.random.randn( 22 , 5),
+    columns=['Mulheres', 'Homens', 'Ensino Superior', 'Desempregados', 'Reformados' ])
+
+
+    #column2=['25','50','75', '80', '100']
+st.area_chart(chart_data)
+
+# Example dataframe
+df = pd.read_csv('Mentalhealth3.csv')
+
+# plot
+st.area_chart(data = df, x= "Date1",y='Total')
 
 
 
-with fig_col2:
-    st.markdown("Tree Map")
-    fig = px.density_heatmap(
-        data_frame=df, y="Sexo", x="Total"
-    )
-    st.write(fig)
+chart_data = pd.DataFrame(
+    np.random.randn( 2 , 5),
+    {
+
+    'Date1': [2004,2008,2010,2015,2022],
+    'columns':['Mulheres', 'Homens', 'Ensino Superior', 'Desempregados', 'Reformados' ] })
 
 
+    #column2=['25','50','75', '80', '100']
+st.area_chart(chart_data)
 
-st.title = "Road Map of Data Science"
-st.markdown("road map")
+df = pd.read_csv('Mentalhealth3.csv')
+st.area_chart( df, x="Date1", y='Total')
 
 df = pd.DataFrame(
-np.random.randn(1000,2) / [50, 50] + [-86, 39],
-columns=['lon', 'lat',])
-st.map(df)
+    {"Date1": [2008, 2011, 2018, 2020], "values": [0, 25, 50, 75], "values_2": [15, 25, 45, 85]}
 
-st.markdown("Detailed Data View")
-st.dataframe(df)
+).set_index("Date1")
+
+df_new = pd.DataFrame(
+    {"steps": [4, 5, 6], "Homens": [0.5, 0.3, 0.5], "Mulheres": [0.8, 0.5, 0.3]}
+).set_index("steps")
+
+df_all = pd.concat([df, df_new], axis=0)
+st.line_chart(chart_data, x=df.all,)
+#st.line_chart(df, x=df.index, y=["Homens", "Mulheres"])
+
+
+
+
+
+
+
+# Add histogram data
+x1 = np.random.randn(200) - 2
+x2 = np.random.randn(200)
+x3 = np.random.randn(200) + 2
+
+# Group data together
+hist_data = [x1, x2, x3]
+
+group_labels = ['Homens', 'Mulheres', 'Ensino superior']
+
+# Create distplot with custom bin_size
+fig = ff.create_distplot(
+        hist_data, group_labels, bin_size=[2008, 2010, 2020])
+
+# Plot!
+st.plotly_chart(fig, use_container_width=True)
+
