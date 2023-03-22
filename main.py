@@ -258,3 +258,8 @@ fig = ff.create_distplot(
 # Plot!
 st.plotly_chart(fig, use_container_width=True)
 
+import streamlit as st
+import streamlit.components.v1 as components
+p = open("lda.html")
+components.html(p.read(), width=1000, height=800, )
+
