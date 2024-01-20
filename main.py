@@ -111,7 +111,7 @@ def filter_dataframe2(df: pd.DataFrame) -> pd.DataFrame:
     Returns:
         pd.DataFrame: Filtered dataframe
     """
-    modify2 = st.text_input(
+    modify2 = st.multiselect(
         'Fatores de Risco👇',
     ['Obsidade', 'Diabetes', 'Risco de Saúde', 'Tensão Alta',
     'Outras Morbilidades', 'Antecedentes familiares'])
