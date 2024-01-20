@@ -184,6 +184,23 @@ def filter_dataframe2(df: pd.DataFrame) -> pd.DataFrame:
 
     return df
 
+#Uma Oprtunidade
+df = filter_dataframe2(df)
+
+st.write('Dataframe: Seleção de Colunas')
+st.dataframe(df)
+
+# Add a multiselect widget to select rows based on the index
+selected_columns = st.multiselect('Select Colums:', df.Columns)
+
+# Subset the dataframe with the selected indices
+selected_columns = df.loc[selected_columns]
+
+# Display the selected data
+st.write('Selected Columns:')
+st.dataframe(selected_columns)
+
+#End
 #df = pd.read_csv(
     #"MentalHealth.csv"
 #)
@@ -245,24 +262,24 @@ st.line_chart(chart_data, x=df.all,)
 
 
 # Add histogram data
-x1 = np.random.randn(200) - 2
-x2 = np.random.randn(200)
-x3 = np.random.randn(200) + 2
+#x1 = np.random.randn(200) - 2
+#x2 = np.random.randn(200)
+#x3 = np.random.randn(200) + 2
 
 # Group data together
-hist_data = [x1, x2, x3]
+#hist_data = [x1, x2, x3]
 
-group_labels = ['Homens', 'Mulheres', 'Ensino superior']
+#group_labels = ['Homens', 'Mulheres', 'Ensino superior']
 
 # Create distplot with custom bin_size
-fig = ff.create_distplot(
-        hist_data, group_labels, bin_size=[2008, 2010, 2020])
+#fig = ff.create_distplot(
+        #hist_data, group_labels, bin_size=[2008, 2010, 2020])
 
 # Plot!
-st.plotly_chart(fig, use_container_width=True)
+#st.plotly_chart(fig, use_container_width=True)
 
-import streamlit as st
-import streamlit.components.v1 as components
-p = open("lda.html")
-components.html(p.read(), width=1000, height=800, )
+#import streamlit as st
+#import streamlit.components.v1 as components
+#p = open("lda.html")
+#components.html(p.read(), width=1000, height=800, )
 
