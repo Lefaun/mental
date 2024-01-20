@@ -112,7 +112,9 @@ def filter_dataframe2(df: pd.DataFrame) -> pd.DataFrame:
         pd.DataFrame: Filtered dataframe
     """
     modify2 = st.text_input(
-        "Escolha os Fatores 👇",
+        'Fatores de Risco👇',
+    ['Obsidade', 'Diabetes', 'Risco de Saúde', 'Tensão Alta',
+    'Outras Morbilidades', 'Antecedentes familiares'])
         #label_visibility=st.session_state.visibility,
         #disabled=st.session_state.disabled,
         #placeholder=st.session_state.placeholder,
