@@ -39,8 +39,6 @@ def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
         #label_visibility=st.session_state.visibility,
         #disabled=st.session_state.disabled,
         #placeholder=st.session_state.placeholder,
-
-    )
     if not modify:
         return df
 
