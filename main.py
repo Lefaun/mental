@@ -185,7 +185,8 @@ def filter_dataframe2(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 #Uma Oprtunidade
-    #df = filter_dataframe(df)
+    st.title("Data Science for Mental Health")
+    df = pd.Dataframe("MentalHealth3.csv")
     
     st.write('Dataframe: Seleção de Colunas')
     st.dataframe(df)
