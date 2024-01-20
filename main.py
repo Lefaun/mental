@@ -11,7 +11,7 @@ from pandas.api.types import (
     is_object_dtype,
 )
 
-st.title("Esatisticas da Saúde Mental no Período de 2004 a 2020 ")
+st.title("Estatísticas da Saúde Mental no Período de 2004 a 2020 ")
 
 st.write(
     """Estudo Efetuado pelo INE - Instiituto Nacional de Estatística sobre o estado da Saúde Mental dos Portugueses 
