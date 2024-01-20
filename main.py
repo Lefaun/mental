@@ -185,20 +185,20 @@ def filter_dataframe2(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 #Uma Oprtunidade
-df = filter_dataframe2(df)
-
-st.write('Dataframe: Seleção de Colunas')
-st.dataframe(df)
-
-# Add a multiselect widget to select rows based on the index
-selected_columns = st.multiselect('Select Colums:', df.Columns)
-
-# Subset the dataframe with the selected indices
-selected_columns = df.loc[selected_columns]
-
-# Display the selected data
-st.write('Selected Columns:')
-st.dataframe(selected_columns)
+    df = filter_dataframe(df)
+    
+    st.write('Dataframe: Seleção de Colunas')
+    st.dataframe(df)
+    
+    # Add a multiselect widget to select rows based on the index
+    selected_columns = st.multiselect('Select Colums:', df.Columns)
+    
+    # Subset the dataframe with the selected indices
+    selected_columns = df.loc[selected_columns]
+    
+    # Display the selected data
+    st.write('Selected Columns:')
+    st.dataframe(selected_columns)
 
 #End
 #df = pd.read_csv(
