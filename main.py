@@ -31,7 +31,10 @@ def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
         pd.DataFrame: Filtered dataframe
     """
     modify = st.multiselect(
-        "Escolha os Fatores 👇", [ 'Obesidade' , 'Diabetes', 'Doença Cardiaca' , 'Tensão Alta' , 'Outras Morbilidades' ]
+    'Fatores de Risco👇',
+    ['Obsidade', 'Diabetes', 'Risco de Saúde', 'Tensão Alta'],
+    ['Outras Morbilidades', 'Antecedentes familiares'])
+
        # "Escolha os Fatores 👇", df.columns,
         #label_visibility=st.session_state.visibility,
         #disabled=st.session_state.disabled,
