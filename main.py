@@ -185,7 +185,7 @@ def filter_dataframe2(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 #Uma Oprtunidade
-    df = filter_dataframe(df)
+    #df = filter_dataframe(df)
     
     st.write('Dataframe: Seleção de Colunas')
     st.dataframe(df)
@@ -199,6 +199,7 @@ def filter_dataframe2(df: pd.DataFrame) -> pd.DataFrame:
     # Display the selected data
     st.write('Selected Columns:')
     st.dataframe(selected_columns)
+    return df
 
 #End
 #df = pd.read_csv(
