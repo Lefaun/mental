@@ -43,6 +43,7 @@ with st.sidebar:
             try:
                 if File is not None:
                     df = pd.read_csv(File, low_memory=False)
+                    st.write(df)
             except valueError:
                 print("Não Foi Adicionado CSV")
             
