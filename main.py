@@ -205,7 +205,7 @@ df = pd.read_csv(
     "Mentalhealth3.csv"
 )
 #######inicio dAS TABS
-tab1, tab2, tab3, tab4 = st.tabs(["The DataFrame","The Maximum Values", "The Minumum Values", "The Average Values"])
+tab1, tab2, tab3, tab4 = st.tabs(["The DataFrame","The Maximum Values", "The Minumum Values", "The Average Values", "Standard Deviation"])
 with tab1:
     
     st.title("Data Science for Health") 
@@ -219,7 +219,9 @@ with tab3:
     
 with tab4:
     st.header("The Average Values")
-    
+
+with tab5:
+    st.header("Standard Deviation")
 
 ######FIM DAS TABS
 
