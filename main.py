@@ -235,7 +235,7 @@ columns=['Mulheres', 'Homens', 'Ensino Superior', 'Desempregados', 'Reformados' 
 #column2=['25','50','75', '80', '100']
 st.area_chart(chart_data)
 
-st.dataframe(filter_dataframe2(df))
+#st.dataframe(filter_dataframe2(df))
     
 
 st.write("____________________________________________________________")  
