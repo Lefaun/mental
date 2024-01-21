@@ -42,7 +42,7 @@ with st.sidebar:
             File = st.file_uploader("Adcione aqui dados sobre saúde", type={"csv"})
             if File is not None:
                 df = pd.read_csv(File, low_memory=False)
-            elif:
+            else:
                 break
             
         
