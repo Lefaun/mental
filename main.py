@@ -40,7 +40,7 @@ with st.sidebar:
         Button = st.button("Adicionar outro CSV")  
         if Button == True:
             File = st.file_uploader("Adcione aqui dados sobre saúde", type={"csv"})
-        if File not None:
+        if File is not None:
             df = pd.read_csv(File, low_memory=False)
         else:
             break
