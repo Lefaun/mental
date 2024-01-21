@@ -191,7 +191,7 @@ with tab1:
     
 with tab2:
     st.header("The Maximum Values")
-    df=pd.DataFrame("Mentalhealth3.csv")
+    df = pd.read_csv("Mentalhealth3.csv"))
     st.title("Data Science for Mental Health")
     df = pd.Dataframe("MentalHealth3.csv")
 
