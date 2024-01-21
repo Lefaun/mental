@@ -20,7 +20,7 @@ st.write(
 )
 
 
-st.sidebar:
+with st.sidebar:
 st.button("Vamos começar!", on_click = clicked, args=[1])
     if st.button.clicked[1]:
     user_csv = st.file_uploader("Upload your CSV file here", type="csv")
