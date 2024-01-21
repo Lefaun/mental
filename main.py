@@ -248,7 +248,7 @@ df = pd.read_csv('Mentalhealth3.csv')
 # plot
 st.title("Valores Médios do DataSet")
 st.area_chart(data = df.mean()
-st.write("____________________________________________________________") 
+#st.write("____________________________________________________________") 
 
 st.title("valores Máxximos do DataSet")
 chart_data = pd.DataFrame(df.max()
