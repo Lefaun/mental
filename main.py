@@ -189,8 +189,6 @@ def filter_dataframe2(df: pd.DataFrame) -> pd.DataFrame:
 
     return df
     
-#Uma Oprtunidade
-    
     
 
 #End
@@ -219,31 +217,26 @@ with tab3:
     
 with tab4:
     st.header("The Average Values")
+    st.dataframe(filter_dataframe2(df))
+    chart_data = pd.DataFrame(
+    np.random.randn( 22 , 5),
+    columns=['Mulheres', 'Homens', 'Ensino Superior', 'Desempregados', 'Reformados' ])
+
+
+    #column2=['25','50','75', '80', '100']
+    st.area_chart(chart_data)
+    
+    st.dataframe(filter_dataframe2(df))
+    
 
 with tab5:
     st.header("Standard Deviation")
 
 ######FIM DAS TABS
 
-st.dataframe(filter_dataframe2(df))
-
-chart_data = pd.DataFrame(
-np.random.randn( 22 , 5),
-columns=['Mulheres', 'Homens', 'Ensino Superior', 'Desempregados', 'Reformados' ])
 
 
-#column2=['25','50','75', '80', '100']
-st.area_chart(chart_data)
 
-st.dataframe(filter_dataframe2(df))
-
-chart_data = pd.DataFrame(
-    np.random.randn( 22 , 5),
-    columns=['Mulheres', 'Homens', 'Ensino Superior', 'Desempregados', 'Reformados' ])
-
-
-    #column2=['25','50','75', '80', '100']
-st.area_chart(chart_data)
 
 st.write("____________________________________________________________")  
 # Example dataframe
