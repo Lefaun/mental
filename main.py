@@ -27,17 +27,17 @@ def Menu():
             st.write('Voçê selecionou as seguintes opções', options)
 
         def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Adds a UI on top of a dataframe to let viewers filter columns
-    Args:
-        df (pd.DataFrame): Original dataframe
-    Returns:
-        pd.DataFrame: Filtered dataframe
-    """
-    modify = st.multiselect(
-    'Fatores de Risco👇',
-    ['Obsidade', 'Diabetes', 'Risco de Saúde', 'Tensão Alta',
-    'Outras Morbilidades', 'Antecedentes familiares'])
+        """
+        Adds a UI on top of a dataframe to let viewers filter columns
+        Args:
+            df (pd.DataFrame): Original dataframe
+        Returns:
+            pd.DataFrame: Filtered dataframe
+        """
+        modify = st.multiselect(
+        'Fatores de Risco👇',
+        ['Obsidade', 'Diabetes', 'Risco de Saúde', 'Tensão Alta',
+        'Outras Morbilidades', 'Antecedentes familiares'])
 
        # "Escolha os Fatores 👇", df.columns,
         #label_visibility=st.session_state.visibility,
