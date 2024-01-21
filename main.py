@@ -1,5 +1,6 @@
 import pandas as pd
 import streamlit as st
+from vega_datasets import data
 import numpy as np
 import plotly.figure_factory as ff
 import plotly.figure_factory as px
@@ -223,7 +224,7 @@ with tab4:
     with col1:
         st.write(" O resultado da média dos Valores é", df.mean())
     with col2:
-        from vega_datasets import data
+        
         data = data.df()
         
         alt.Chart(data).mark_point().encode(
