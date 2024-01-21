@@ -26,13 +26,13 @@ with st.sidebar:
         st.title("Pode Adicionar outro daTa Set em CSV")
         st.write("Apenas Necessita de Adicionar um novos CSV")
             
-        #def clicked(button):
-        st.button("Vamos começar!")
-        if st.button == True:
-           file = st.file_uploader("Upload your CSV file here", type="csv")
-        if st.file_uploader is not None:
-            df = pd.read_csv(file)
-        
+        def clicked(button,file):
+            st.button("Vamos começar!")
+            if st.button == True:
+               file = st.file_uploader("Upload your CSV file here", type="csv")
+            if st.file_uploader is not None:
+                df = pd.read_csv(file)
+            
         
 def filter_data(df: pd.DataFrame) ->pd.DataFrame:
     options = st.multiselect("escolha a Cena ", options=df.columns)
