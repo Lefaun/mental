@@ -19,7 +19,7 @@ st.write(
     """
 )
 
-def Menu():
+
     tab1, tab2, tab3, tab4 = st.tabs(["The DataFrame","The Maximum Values", "The Minumum Values", "The Average Values"])
     with tab1:
         def filter_data(df: pd.DataFrame) ->pd.DataFrame:
