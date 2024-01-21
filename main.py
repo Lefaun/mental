@@ -208,19 +208,10 @@ df = pd.read_csv(
 tab1, tab2, tab3, tab4 = st.tabs(["The DataFrame","The Maximum Values", "The Minumum Values", "The Average Values"])
 with tab1:
     
- st.title("Data Science for Health") 
+    st.title("Data Science for Health") 
     
 with tab2:
     st.header("The Maximum Values")
-    st.dataframe(filter_dataframe2(df))
-
-    chart_data = pd.DataFrame(
-    np.random.randn( 22 , 5),
-    columns=['Mulheres', 'Homens', 'Ensino Superior', 'Desempregados', 'Reformados' ])
-
-
-    #column2=['25','50','75', '80', '100']
-st.area_chart(chart_data)
    
 
 with tab3:
@@ -232,6 +223,15 @@ with tab4:
 
 ######FIM DAS TABS
 
+st.dataframe(filter_dataframe2(df))
+
+chart_data = pd.DataFrame(
+np.random.randn( 22 , 5),
+columns=['Mulheres', 'Homens', 'Ensino Superior', 'Desempregados', 'Reformados' ])
+
+
+#column2=['25','50','75', '80', '100']
+st.area_chart(chart_data)
 
 st.dataframe(filter_dataframe2(df))
 
