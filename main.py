@@ -45,8 +45,6 @@ with st.sidebar:
                     df = pd.read_csv(File, low_memory=False)
             except valueError:
                 print("Não Foi Adicionado CSV")
-            
-st.write(df)
 
 def filter_data(df: pd.DataFrame) ->pd.DataFrame:
     options = st.multiselect("escolha a Cena ", options=df.columns)
