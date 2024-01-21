@@ -22,10 +22,10 @@ st.write(
 
 with st.sidebar:
     with st.sidebar:
-        with st.echo():
-            st.write("This code will be printed to the sidebar.")
+        with st.title("Pode Adicionar outro daTa Set em CSV"):
+            st.write("Apenas Necessita de Adicionar um novos CSV")
             
-        with clicked(button):
+        def clicked(button):
             st.button("Vamos começar!", on_click = clicked, args=[1])
             if st.button.clicked[1]:
                 user_csv = st.file_uploader("Upload your CSV file here", type="csv")
