@@ -10,6 +10,7 @@ from pandas.api.types import (
     is_numeric_dtype,
     is_object_dtype,
 )
+import csv
 
 st.title("Estatísticas da Saúde Mental no Período de 2004 a 2020 ")
 
@@ -32,7 +33,7 @@ with st.sidebar:
             if user_csv is not None:
                 user_csv.seek(0)
                 df = pd.read_csv(user_csv, low_memory=False)
-    
+        clicked()
         
 def filter_data(df: pd.DataFrame) ->pd.DataFrame:
     options = st.multiselect("escolha a Cena ", options=df.columns)
