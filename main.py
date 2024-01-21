@@ -37,11 +37,11 @@ with st.sidebar:
 8. Provide resources and support: A virtual assistant can act as a virtual resource center, providing information and support to individuals seeking mental health resources. """)
         st.title("Pode Adicionar outro daTa Set em CSV")
         st.write("Apenas Necessita de Adicionar um novos CSV")
-        st.button("Adicionar outro CSV")  
-        
-        File2 = st.file_uploader("Adcione aqui dados sobre saúde", type={"csv"})
+        Button = st.button("Adicionar outro CSV")  
+        if Button == True:
+            File = st.file_uploader("Adcione aqui dados sobre saúde", type={"csv"})
         if File is not None:
-            df = pd.read_csv(File2, low_memory=False)
+            df = pd.read_csv(File, low_memory=False)
             
         
 def filter_data(df: pd.DataFrame) ->pd.DataFrame:
