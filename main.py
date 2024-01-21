@@ -28,7 +28,7 @@ with st.sidebar:
             
         #def clicked(button):
         st.button("Vamos começar!", on_click = clicked, args=[1])
-        if st.button = True
+        if st.button == True
             user_csv = st.file_uploader("Upload your CSV file here", type="csv")
         if user_csv is not None:
             user_csv.seek(0)
