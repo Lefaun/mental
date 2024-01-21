@@ -29,9 +29,9 @@ with st.sidebar:
         #def clicked(button):
         st.button("Vamos começar!")
         if st.button == True:
-            st.file_uploader("Upload your CSV file here", type="csv")
+           file = st.file_uploader("Upload your CSV file here", type="csv")
         if st.file_uploader is not None:
-            df = pd.read_csv(user_csv, low_memory=False)
+            df = pd.read_csv(file)
         
         
 def filter_data(df: pd.DataFrame) ->pd.DataFrame:
