@@ -23,7 +23,7 @@ st.write(
 tab1, tab2, tab3, tab4 = st.tabs(["The DataFrame","The Maximum Values", "The Minumum Values", "The Average Values"])
 with tab1:
     
-    st.title=("Data Science for Health") 
+    st.title("Data Science for Health") 
     
 with tab2:
     st.header("The Maximum Values")
