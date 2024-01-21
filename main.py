@@ -242,18 +242,20 @@ st.area_chart(chart_data)
     
 
 st.write("____________________________________________________________")  
-st.title("Valores Médios do DataSet")
+st.Title("Valores Médios do DataSet")
 # Example dataframe
-df = pd.read_csv('Mentalhealth3.csv')
+#df = pd.read_csv('Mentalhealth3.csv')
 
 # plot
 
 
 
-st.area_chart(data = df.mean())
+st.area_chart(data = df.mean(10))
 #st.write("____________________________________________________________") 
+st.Title("Evolução dos Valores Máximos")
+chart_data = pd.DataFrame(np.random.randn(20, 3), columns=["2004", "2010", "2020"])
 
-st.area_chart(data = df.max())
+st.line_chart(data= df.max(10))
 
 st.write("____________________________________________________________") 
 st.title("Evolução dos Profissionais com Ensino Superior")
