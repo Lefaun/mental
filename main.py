@@ -204,6 +204,47 @@ st.write("____________________________________________________________")
 df = pd.read_csv(
     "Mentalhealth3.csv"
 )
+#######inicio dAS TABS
+tab1, tab2, tab3, tab4 = st.tabs(["The DataFrame","The Maximum Values", "The Minumum Values", "The Average Values"])
+with tab1:
+    
+ st.title("Data Science for Health") 
+    
+with tab2:
+    st.header("The Maximum Values")
+    df = pd.read_csv("Mentalhealth3.csv")
+    st.title("Data Science for Mental Health")
+    df.head(20)
+    df = pd.DataFrame("Mentalhealth3.csv")
+    st.dataframe(df) 
+
+with tab3:
+    st.header("The Minumum Values")
+    ddf = pd.read_csv("Mentalhealth3.csv")
+    st.title("Data Science for Mental Health")
+    df.head(10)
+    st.dataframe(df)
+with tab4:
+    st.header("The Average Values")
+    df = pd.dataframe("Mentalhealth3.csv")
+    st.title("Data Science for Mental Health")
+    df = pd.Dataframe("MentalHealth3.csv")
+    
+    st.write('Dataframe: Seleção de Colunas')
+    st.dataframe(df)
+    
+    # Add a multiselect widget to select rows based on the index
+    selected_columns = st.multiselect('Select Colums:', df.Columns)
+    
+    # Subset the dataframe with the selected indices
+    selected_columns = df.loc[selected_columns]
+    
+    # Display the selected data
+    st.write('Selected Columns:')
+    st.dataframe(selected_columns)
+
+######FIM DAS TABS
+
 
 st.dataframe(filter_dataframe2(df))
 
