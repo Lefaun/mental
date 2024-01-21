@@ -250,7 +250,8 @@ st.title("Valores Médios do DataSet")
 st.area_chart(data = df.mean()
 #st.write("____________________________________________________________") 
 
-st.title("valores Máxximos do DataSet")
+st.title("Valores Máximos do DataSet")
+
 chart_data = pd.DataFrame(df.max()
     {
 
