@@ -212,6 +212,15 @@ with tab1:
     
 with tab2:
     st.header("The Maximum Values")
+    st.dataframe(filter_dataframe2(df))
+
+    chart_data = pd.DataFrame(
+    np.random.randn( 22 , 5),
+    columns=['Mulheres', 'Homens', 'Ensino Superior', 'Desempregados', 'Reformados' ])
+
+
+    #column2=['25','50','75', '80', '100']
+st.area_chart(chart_data)
    
 
 with tab3:
