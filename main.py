@@ -24,27 +24,22 @@ st.write(
 with st.sidebar:
     with st.sidebar:
 
-        st.write(""" Organize and analyze data: A virtual assistant can help organize and analyze large amounts of data related to mental health, such as patient demographics, treatment outcomes, and resource utilization. This can provide valuable insights for healthcare providers and policymakers to improve mental health services.
+        st.write(""" 1. Organize and analyze data: A virtual assistant can help organize and analyze large amounts of data related to mental health, such as patient demographics, treatment outcomes, and resource utilization. 2. This can provide valuable insights for healthcare providers and policymakers to improve mental health services.
 
-Identify patterns and trends: By using data analysis tools, a virtual assistant can identify patterns and trends in mental health data. This can help identify high-risk populations, common mental health conditions, and areas where resources are lacking.
+3. Identify patterns and trends: By using data analysis tools, a virtual assistant can identify patterns and trends in mental health data. 4. This can help identify high-risk populations, common mental health conditions, and areas where resources are lacking.
 
-Predictive modeling: With the help of machine learning algorithms, a virtual assistant can create predictive models to forecast future mental health needs and resource requirements. This can assist in planning and allocating resources effectively.
+5. Predictive modeling: With the help of machine learning algorithms, a virtual assistant can create predictive models to forecast future mental health needs and resource requirements. This can assist in planning and allocating resources effectively.
 
-Improve patient care: By analyzing patient data, a virtual assistant can identify gaps in care and suggest interventions to improve patient outcomes. This can include personalized treatment plans, medication adherence reminders, and follow-up care recommendations.
+6. Improve patient care: By analyzing patient data, a virtual assistant can identify gaps in care and suggest interventions to improve patient outcomes. This can include personalized treatment plans, medication adherence reminders, and follow-up care recommendations.
 
-Monitor mental health trends: A virtual assistant can continuously monitor mental health data and alert healthcare providers to any significant changes or emerging trends. This can help in early detection and prevention of mental health issues.
+7.Monitor mental health trends: A virtual assistant can continuously monitor mental health data and alert healthcare providers to any significant changes or emerging trends. This can help in early detection and prevention of mental health issues.
 
-Provide resources and support: A virtual assistant can act as a virtual resource center, providing information and support to individuals seeking mental health resources. """)
+8. Provide resources and support: A virtual assistant can act as a virtual resource center, providing information and support to individuals seeking mental health resources. """)
         st.title("Pode Adicionar outro daTa Set em CSV")
         st.write("Apenas Necessita de Adicionar um novos CSV")
             
-        def clicked(button,file):
-            st.button("Vamos começar!")
-            if st.button == True:
-               file = st.file_uploader("Upload your CSV file here", type="csv")
-            if st.file_uploader is not None:
-                df = pd.read_csv(file)
-            return clicked(button,file)
+        File = st.file_uploader("Adcione aqui dados sobre saúde", type={"csv", "txt"})
+        df = pd.dataframe(File)
             
         
 def filter_data(df: pd.DataFrame) ->pd.DataFrame:
