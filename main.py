@@ -39,9 +39,9 @@ with st.sidebar:
         st.write("Apenas Necessita de Adicionar um novos CSV")
         st.button("Adicionar outro CSV")  
         if st.button == True:
-            File = st.file_uploader("Adcione aqui dados sobre saúde", type={"csv"})
-        if File  is not None:
-            df = pd.read_csv(File, low_memory=False)
+            File2 = st.file_uploader("Adcione aqui dados sobre saúde", type={"csv"})
+        if File is not None:
+            df = pd.read_csv(File2, low_memory=False)
             
         
 def filter_data(df: pd.DataFrame) ->pd.DataFrame:
