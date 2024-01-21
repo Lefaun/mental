@@ -273,6 +273,20 @@ df_new = pd.DataFrame(
 
 df_all = pd.concat([df, df_new], axis=0)
 st.line_chart(chart_data, x=df.all,)
+_______________________________________________________
+def convert_df(df):
+   return df.to_csv(index=False).encode('utf-8')
+
+
+csv = convert_df(df)
+
+st.download_button(
+   "Pode Fazer o Download dos Dados",
+   csv,
+   "file.csv",
+   "text/csv",
+   key='download-csv'
+)
 #st.line_chart(df, x=df.index, y=["Homens", "Mulheres"])
 
 # Plot!
