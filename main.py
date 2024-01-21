@@ -212,7 +212,7 @@ with tab2:
     st.header("The Maximum Values")
     
    
-    dst.write(" O resultado dos  dos Valores Máximos", df.max())
+    st.write(" O resultado dos  dos Valores Máximos", df.max())
 with tab3:
     st.header("The Minumum Values")
     st.write(" O resultado dos  dos Valores minimos", df.min())
