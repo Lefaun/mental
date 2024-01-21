@@ -210,6 +210,7 @@ with tab1:
     
 with tab2:
     st.header("The Maximum Values")
+    
    
     data = np.random.randn(10, 1)
 with tab3:
@@ -217,7 +218,8 @@ with tab3:
     
 with tab4:
     st.header("The Average Values")
-    
+    df3 = pd.concat([df1, df2])
+    st.write(" O resultado da média dos Valores é", df3)
 
 with tab5:
     st.header("Standard Deviation")
