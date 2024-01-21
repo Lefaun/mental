@@ -219,9 +219,18 @@ with tab3:
     
 with tab4:
     st.header("The Average Values")
-    
-    st.write(" O resultado da média dos Valores é", df.mean())
-
+    col1, col2 = st.columns(2)
+    with col1:
+        st.write(" O resultado da média dos Valores é", df.mean())
+    with col2:
+        from vega_datasets import data
+        data = data.df()
+        
+        alt.Chart(data).mark_point().encode(
+            x='Desempregados',
+            y='16-64 anos.1',
+            color='Ensino secundário e pós-secundário',
+        ).interactive()
 with tab5:
     st.header("Standard Deviation")
 
