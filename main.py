@@ -102,11 +102,11 @@ with tab1:
                 user_text_input = right.text_input(
                     f"Substring or regex in {column}",
                 )
-                if user_text_input:
-                    df = df[df[column].str.contains(user_text_input)]
-
-         return df        
-
+                 if user_text_input:
+                        df = df[df[column].str.contains(user_text_input)]
+    
+        return df
+        
     def filter_dataframe2(df: pd.DataFrame) -> pd.DataFrame:
         """
         Adds a UI on top of a dataframe to let viewers filter columns
