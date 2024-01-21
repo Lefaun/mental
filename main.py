@@ -22,44 +22,44 @@ st.write(
 
 tab1, tab2, tab3, tab4 = st.tabs(["The DataFrame","The Maximum Values", "The Minumum Values", "The Average Values"])
 with tab1:
-    def filter_data(df: pd.DataFrame) ->pd.DataFrame:
-        options = st.multiselect("escolha a Cena ", options=df.columns)
-        st.write('Voçê selecionou as seguintes opções', options)
+   def filter_data(df: pd.DataFrame) ->pd.DataFrame:
+    options = st.multiselect("escolha a Cena ", options=df.columns)
+    st.write('Voçê selecionou as seguintes opções', options)
 
-    def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
-        """
-        Adds a UI on top of a dataframe to let viewers filter columns
-        Args:
-            df (pd.DataFrame): Original dataframe
-        Returns:
-            pd.DataFrame: Filtered dataframe
-        """
-        modify = st.multiselect(
-        'Fatores de Risco👇',
-        ['Obsidade', 'Diabetes', 'Risco de Saúde', 'Tensão Alta',
-        'Outras Morbilidades', 'Antecedentes familiares'])
+def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Adds a UI on top of a dataframe to let viewers filter columns
+    Args:
+        df (pd.DataFrame): Original dataframe
+    Returns:
+        pd.DataFrame: Filtered dataframe
+    """
+    modify = st.multiselect(
+    'Fatores de Risco👇',
+    ['Obsidade', 'Diabetes', 'Risco de Saúde', 'Tensão Alta',
+    'Outras Morbilidades', 'Antecedentes familiares'])
 
        # "Escolha os Fatores 👇", df.columns,
         #label_visibility=st.session_state.visibility,
         #disabled=st.session_state.disabled,
         #placeholder=st.session_state.placeholder,
-        if not modify:
-            return df
-    
-        df = df.copy()
-    
-        # Try to convert datetimes into a standard format (datetime, no timezone)
-        for col in df.columns:
-            if is_object_dtype(df[col]):
-                try:
-                    df[col] = pd.to_datetime(df[col])
-                except Exception:
-                    pass
-    
-            if is_datetime64_any_dtype(df[col]):
-                df[col] = df[col].dt.tz_localize(None)
-    
-        modification_container = st.container()
+    if not modify:
+        return df
+
+    df = df.copy()
+
+    # Try to convert datetimes into a standard format (datetime, no timezone)
+    for col in df.columns:
+        if is_object_dtype(df[col]):
+            try:
+                df[col] = pd.to_datetime(df[col])
+            except Exception:
+                pass
+
+        if is_datetime64_any_dtype(df[col]):
+            df[col] = df[col].dt.tz_localize(None)
+
+    modification_container = st.container()
 
     with modification_container:
         to_filter_columns = st.multiselect("Filter dataframe on", df.columns)
@@ -99,13 +99,13 @@ with tab1:
                     start_date, end_date = user_date_input
                     df = df.loc[df[column].between(start_date, end_date)]
             else:
-                 user_text_input = right.text_input(
+                user_text_input = right.text_input(
                     f"Substring or regex in {column}",
                 )
-            if user_text_input:
-                df = df[df[column].str.contains(user_text_input)]
+                if user_text_input:
+                    df = df[df[column].str.contains(user_text_input)]
 
-        return df
+    return df
             
     def filter_dataframe2(df: pd.DataFrame) -> pd.DataFrame:
         """
