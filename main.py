@@ -27,7 +27,7 @@ with st.sidebar:
         st.write("Apenas Necessita de Adicionar um novos CSV")
             
         #def clicked(button):
-        st.button("Vamos começar!", on_click = clicked, args=[1])
+        st.button("Vamos começar!")
         if st.button == True:
             user_csv = st.file_uploader("Upload your CSV file here", type="csv")
         if user_csv is not None:
