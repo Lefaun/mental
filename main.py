@@ -194,7 +194,9 @@ with tab2:
     df = pd.read_csv("Mentalhealth3.csv")
     st.title("Data Science for Mental Health")
     df.head(20)
-    df = pd.dataframe("MentalHealth3.csv")
+    df = pd.DataFrame("Mentalhealth3.csv", columns=("col %d" % i for i in range(20)))
+
+    st.dataframe(df) 
 
 with tab3:
     st.header("The Minumum Values")
