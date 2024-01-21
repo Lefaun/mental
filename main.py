@@ -20,7 +20,13 @@ st.write(
 )
 
 
-
+st.sidebar:
+st.button("Vamos começar!", on_click = clicked, args=[1])
+    if st.button.clicked[1]:
+    user_csv = st.file_uploader("Upload your CSV file here", type="csv")
+    if user_csv is not None:
+        user_csv.seek(0)
+        df = pd.read_csv(user_csv, low_memory=False)
     
         
 def filter_data(df: pd.DataFrame) ->pd.DataFrame:
