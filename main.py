@@ -212,14 +212,15 @@ with tab2:
     st.header("The Maximum Values")
     
    
-    data = np.random.randn(10, 1)
+    dst.write(" O resultado dos  dos Valores Máximos", df.max(), width= 200)
 with tab3:
     st.header("The Minumum Values")
+    st.write(" O resultado dos  dos Valores minimos", df.min(), width= 200)
     
 with tab4:
     st.header("The Average Values")
     
-    st.write(" O resultado da média dos Valores é", df.mean())
+    st.write(" O resultado da média dos Valores é", df.mean(), width= 200)
 
 with tab5:
     st.header("Standard Deviation")
