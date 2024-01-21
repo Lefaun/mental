@@ -18,6 +18,36 @@ st.write(
     divídidos por Género, Faixa Étaria e Ocupação Profissional
     """
 )
+tab1, tab2, tab3 = st.tabs(["Max", "Min", "Mean"])
+
+    with tab1:
+       st.header("The Maximum Values")
+       st.dataframe("Mentalhealth3.csv", width=200)
+       st.title("Data Science for Mental Health")
+       df = pd.Dataframe("MentalHealth3.csv")
+    with tab2:
+       st.header("The Minumum Values")
+       st.dataframe("Mentalhealth3.csv", width=200)
+    with tab3:
+        st.header("The Average Values")
+        st.dataframe("Mentalhealth3.csv", width=200)
+        st.title("Data Science for Mental Health")
+        df = pd.Dataframe("MentalHealth3.csv")
+        
+        st.write('Dataframe: Seleção de Colunas')
+        st.dataframe(df)
+        
+        # Add a multiselect widget to select rows based on the index
+        selected_columns = st.multiselect('Select Colums:', df.Columns)
+        
+        # Subset the dataframe with the selected indices
+        selected_columns = df.loc[selected_columns]
+        
+        # Display the selected data
+        st.write('Selected Columns:')
+        st.dataframe(selected_columns)
+        return df
+        
 def filter_data(df: pd.DataFrame) ->pd.DataFrame:
     options = st.multiselect("escolha a Cena ", options=df.columns)
     st.write('Voçê selecionou as seguintes opções', options)
@@ -183,35 +213,7 @@ def filter_dataframe2(df: pd.DataFrame) -> pd.DataFrame:
                     df = df[df[column].str.contains(user_text_input)]
 
     return df
-    tab1, tab2, tab3 = st.tabs(["Max", "Min", "Mean"])
-
-    with tab1:
-       st.header("The Maximum Values")
-       st.dataframe("Mentalhealth3.csv", width=200)
-       st.title("Data Science for Mental Health")
-       df = pd.Dataframe("MentalHealth3.csv")
-    with tab2:
-       st.header("The Minumum Values")
-       st.dataframe("Mentalhealth3.csv", width=200)
-    with tab3:
-        st.header("The Average Values")
-        st.dataframe("Mentalhealth3.csv", width=200)
-        st.title("Data Science for Mental Health")
-        df = pd.Dataframe("MentalHealth3.csv")
-        
-        st.write('Dataframe: Seleção de Colunas')
-        st.dataframe(df)
-        
-        # Add a multiselect widget to select rows based on the index
-        selected_columns = st.multiselect('Select Colums:', df.Columns)
-        
-        # Subset the dataframe with the selected indices
-        selected_columns = df.loc[selected_columns]
-        
-        # Display the selected data
-        st.write('Selected Columns:')
-        st.dataframe(selected_columns)
-        return df
+    
 #Uma Oprtunidade
     
     
