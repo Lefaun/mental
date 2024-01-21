@@ -46,7 +46,7 @@ with tab3:
     # Display the selected data
     st.write('Selected Columns:')
     st.dataframe(selected_columns)
-    return df
+    
         
 def filter_data(df: pd.DataFrame) ->pd.DataFrame:
     options = st.multiselect("escolha a Cena ", options=df.columns)
