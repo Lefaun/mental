@@ -295,7 +295,7 @@ st.download_button(
 
 st.write("_______________________________________________________")
 st.write("Trabalho de Pesquisa e Programação: Paulo Ricardo Monteiro")
-st.write("Formação em Fundamentos de Python Avançado por José Luis Boura")
+st.write("Formação em Fundamentos de Python Avançado por José Luis Boura - 2023/2024")
 #st.line_chart(df, x=df.index, y=["Homens", "Mulheres"])
 
 # Plot!
