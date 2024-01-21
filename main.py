@@ -218,8 +218,8 @@ with tab3:
     
 with tab4:
     st.header("The Average Values")
-    df3 = pd.mean([df])
-    st.write(" O resultado da média dos Valores é", df3)
+    
+    st.write(" O resultado da média dos Valores é", df.mean())
 
 with tab5:
     st.header("Standard Deviation")
