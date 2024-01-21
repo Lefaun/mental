@@ -22,7 +22,7 @@ st.write(
 
 with st.sidebar:
     with st.sidebar:
-        st.title("Pode Adicionar outro daTa Set em CSV"):
+        st.title("Pode Adicionar outro daTa Set em CSV")
         st.write("Apenas Necessita de Adicionar um novos CSV")
             
         def clicked(button):
