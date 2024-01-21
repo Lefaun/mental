@@ -105,8 +105,8 @@ with tab1:
             if user_text_input:
                 df = df[df[column].str.contains(user_text_input)]
 
-            return df
-        
+                return df
+            
     def filter_dataframe2(df: pd.DataFrame) -> pd.DataFrame:
         """
         Adds a UI on top of a dataframe to let viewers filter columns
