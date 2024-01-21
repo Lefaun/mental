@@ -32,6 +32,7 @@ with st.sidebar:
                file = st.file_uploader("Upload your CSV file here", type="csv")
             if st.file_uploader is not None:
                 df = pd.read_csv(file)
+        return clicked(button,file)
             
         
 def filter_data(df: pd.DataFrame) ->pd.DataFrame:
