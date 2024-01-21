@@ -224,7 +224,7 @@ with tab4:
         st.write(" O resultado da média dos Valores é", df.mean())
     with col2:
         
-        data = data.df()
+        pd = data.df()
         
         alt.Chart(data).mark_point().encode(
             x='Desempregados',
