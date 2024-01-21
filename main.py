@@ -268,10 +268,10 @@ df = pd.DataFrame(
 ).set_index("Date1")
 
 df_new = pd.DataFrame(
-    {"steps": [4, 5, 6], "Homens": [0.5, 0.3, 0.5], "Mulheres": [0.8, 0.5, 0.3]}
+    {"steps": [2001, 2010, 2020], "Homens": [0.5, 0.3, 0.5], "Mulheres": [0.8, 0.5, 0.3]}
 ).set_index("steps")
 
-df_all = pd.concat([df, df_new], axis=y)
+df_all = pd.concat([df, df_new], axis=0)
 st.line_chart(chart_data, x=df.all,)
 #st.line_chart(df, x=df.index, y=["Homens", "Mulheres"])
 
