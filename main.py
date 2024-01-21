@@ -271,29 +271,9 @@ df_new = pd.DataFrame(
     {"steps": [4, 5, 6], "Homens": [0.5, 0.3, 0.5], "Mulheres": [0.8, 0.5, 0.3]}
 ).set_index("steps")
 
-df_all = pd.concat([df, df_new], axis=0)
+df_all = pd.concat([df, df_new], axis=y)
 st.line_chart(chart_data, x=df.all,)
 #st.line_chart(df, x=df.index, y=["Homens", "Mulheres"])
-
-
-
-
-
-
-
-# Add histogram data
-#x1 = np.random.randn(200) - 2
-#x2 = np.random.randn(200)
-#x3 = np.random.randn(200) + 2
-
-# Group data together
-#hist_data = [x1, x2, x3]
-
-#group_labels = ['Homens', 'Mulheres', 'Ensino superior']
-
-# Create distplot with custom bin_size
-#fig = ff.create_distplot(
-        #hist_data, group_labels, bin_size=[2008, 2010, 2020])
 
 # Plot!
 #st.plotly_chart(fig, use_container_width=True)
