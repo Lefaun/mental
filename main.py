@@ -194,7 +194,7 @@ with tab2:
     df = pd.read_csv("Mentalhealth3.csv")
     st.title("Data Science for Mental Health")
     df.head(20)
-    df = pd.DataFrame("Mentalhealth3.csv", columns=("col %d" % i for i in range(20)))
+    df = pd.DataFrame("Mentalhealth3.csv")
 
     st.dataframe(df) 
 
