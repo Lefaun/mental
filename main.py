@@ -211,7 +211,7 @@ with tab1:
 with tab2:
     st.header("The Maximum Values")
    
-
+    data = np.random.randn(10, 1)
 with tab3:
     st.header("The Minumum Values")
     
