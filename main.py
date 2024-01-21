@@ -191,7 +191,7 @@ def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     
 with tab2:
     st.header("The Maximum Values")
-    df.pd.dataframe("Mentalhealth3.csv")
+    df=pd.dataframe("Mentalhealth3.csv")
     st.title("Data Science for Mental Health")
     df = pd.Dataframe("MentalHealth3.csv")
 
@@ -200,7 +200,7 @@ with tab3:
     st.pd.dataframe("Mentalhealth3.csv")
 with tab4:
     st.header("The Average Values")
-    st.pd.dataframe("Mentalhealth3.csv")
+    df = pd.dataframe("Mentalhealth3.csv")
     st.title("Data Science for Mental Health")
     df = pd.Dataframe("MentalHealth3.csv")
     
