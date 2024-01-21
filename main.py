@@ -221,7 +221,7 @@ def filter_dataframe2(df: pd.DataFrame) -> pd.DataFrame:
     #"MentalHealth.csv"
 #)
 #st.dataframe(filter_dataframe(df))
-st.divider() 
+st.write("____________________________________________________________") 
 
 
 df = pd.read_csv(
@@ -245,7 +245,7 @@ df = pd.read_csv('Mentalhealth3.csv')
 # plot
 st.area_chart(data = df, x= "Date1",y='Total')
 
-st.divider() 
+st.write("____________________________________________________________") 
 
 chart_data = pd.DataFrame(
     np.random.randn( 2 , 5),
@@ -257,7 +257,9 @@ chart_data = pd.DataFrame(
 
     #column2=['25','50','75', '80', '100']
 st.area_chart(chart_data)
-st.divider() 
+
+st.write("____________________________________________________________") 
+
 df = pd.read_csv('Mentalhealth3.csv')
 st.area_chart( df, x="Date1", y='Total')
 
