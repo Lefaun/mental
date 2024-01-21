@@ -253,11 +253,11 @@ st.area_chart(data = df.mean()
 #st.write("____________________________________________________________") 
 
 
-chart_data = pd.DataFrame(df.max())
 
 
-    #column2=['25','50','75', '80', '100']
-st.area_chart(chart_data)
+
+st.title("Valores Máximo do DataSet")
+st.area_chart(data = df.max()
 
 st.write("____________________________________________________________") 
 st.title("Evolução dos Profissionais com ensino Superior")
