@@ -102,8 +102,8 @@ with tab1:
                  user_text_input = right.text_input(
                     f"Substring or regex in {column}",
                 )
-                if user_text_input:
-                    df = df[df[column].str.contains(user_text_input)]
+            if user_text_input:
+                df = df[df[column].str.contains(user_text_input)]
 
         return df
         
