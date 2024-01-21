@@ -250,7 +250,7 @@ st.header("Valores Médios do DataSet")
 
 
 
-st.area_chart(data = df.mean(10))
+st.area_chart(data = df.mean())
 #st.write("____________________________________________________________") 
 st.Title("Evolução dos Valores Máximos")
 chart_data = pd.DataFrame(np.random.randn(20, 3), columns=["2004", "2010", "2020"])
