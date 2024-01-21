@@ -218,7 +218,7 @@ with tab3:
     
 with tab4:
     st.header("The Average Values")
-    df3 = pd.concat([df1, df2])
+    df3 = pd.concat([df, df2])
     st.write(" O resultado da média dos Valores é", df3)
 
 with tab5:
