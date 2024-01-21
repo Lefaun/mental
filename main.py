@@ -193,7 +193,8 @@ with tab2:
     st.header("The Maximum Values")
     df = pd.read_csv("Mentalhealth3.csv")
     st.title("Data Science for Mental Health")
-    df = pd.Dataframe("MentalHealth3.csv")
+    df.Max(10)
+    df = pd.dataframe("MentalHealth3.csv")
 
 with tab3:
     st.header("The Minumum Values")
