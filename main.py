@@ -246,12 +246,12 @@ st.write("____________________________________________________________")
 df = pd.read_csv('Mentalhealth3.csv')
 
 # plot
-st.area_chart(data = df, x= "Date1",y='Total')
-
+st.titulo - valores Médios do DataSet
+st.area_chart(data = df.mean()
 st.write("____________________________________________________________") 
 
-chart_data = pd.DataFrame(
-    np.random.randn( 2 , 5),
+st.titulo - valores Máxximos do DataSet
+chart_data = pd.DataFrame(df.max()
     {
 
     'Date1': [2004,2008,2010,2015,2022],
@@ -264,7 +264,7 @@ st.area_chart(chart_data)
 st.write("____________________________________________________________") 
 
 df = pd.read_csv('Mentalhealth3.csv')
-st.area_chart( df, x="Date1", y='Total')
+st.area_chart( df, x="Date1", y='Ensino superior')
 
 df = pd.DataFrame(
     {"Date1": [2008, 2011, 2018, 2020], "values": [0, 25, 50, 75], "values_2": [15, 25, 45, 85]}
