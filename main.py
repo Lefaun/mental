@@ -194,9 +194,9 @@ def filter_dataframe2(df: pd.DataFrame) -> pd.DataFrame:
        st.header("The Minumum Values")
        st.dataframe("Mentalhealth3.csv", width=200)
     with tab3:
-       st.header("The Average Values")
-       st.dataframe("Mentalhealth3.csv", width=200)
-       st.title("Data Science for Mental Health")
+        st.header("The Average Values")
+        st.dataframe("Mentalhealth3.csv", width=200)
+        st.title("Data Science for Mental Health")
         df = pd.Dataframe("MentalHealth3.csv")
         
         st.write('Dataframe: Seleção de Colunas')
