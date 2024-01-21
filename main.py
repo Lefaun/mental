@@ -21,6 +21,10 @@ st.write(
 
 
 with st.sidebar:
+with st.sidebar:
+with st.echo():
+    st.write("This code will be printed to the sidebar.")
+    
     def clicked(button):
         st.button("Vamos começar!", on_click = clicked, args=[1])
         if st.button.clicked[1]:
