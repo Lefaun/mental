@@ -23,8 +23,8 @@ st.write(
 tab1, tab2, tab3, tab4 = st.tabs(["The DataFrame","The Maximum Values", "The Minumum Values", "The Average Values"])
 with tab1:
     def filter_data(df: pd.DataFrame) ->pd.DataFrame:
-    options = st.multiselect("escolha a Cena ", options=df.columns)
-    st.write('Voçê selecionou as seguintes opções', options)
+        options = st.multiselect("escolha a Cena ", options=df.columns)
+        st.write('Voçê selecionou as seguintes opções', options)    
 
     def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
         """
