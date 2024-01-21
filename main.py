@@ -273,7 +273,12 @@ df_new = pd.DataFrame(
 
 df_all = pd.concat([df, df_new], axis=0)
 st.line_chart(chart_data, x=df.all,)
-_______________________________________________________
+st.write("_______________________________________________________")
+
+df = pd.read_csv("Mentalhealth3.csv")
+
+@st.experimental_memo
+
 def convert_df(df):
    return df.to_csv(index=False).encode('utf-8')
 
