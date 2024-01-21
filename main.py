@@ -195,12 +195,14 @@ with tab2:
     st.title("Data Science for Mental Health")
     df.head(20)
     df = pd.DataFrame("Mentalhealth3.csv")
-
     st.dataframe(df) 
 
 with tab3:
     st.header("The Minumum Values")
-    df =pd.DataFrame("Mentalhealth3.csv")
+    ddf = pd.read_csv("Mentalhealth3.csv")
+    st.title("Data Science for Mental Health")
+    df.head(10)
+    st.dataframe(df)
 with tab4:
     st.header("The Average Values")
     df = pd.dataframe("Mentalhealth3.csv")
