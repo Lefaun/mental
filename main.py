@@ -223,14 +223,8 @@ with tab4:
     with col1:
         st.write(" O resultado da média dos Valores é", df.mean())
     with col2:
-        
-        pd = data.df()
-        
-        alt.Chart(data).mark_point().encode(
-            x='Desempregados',
-            y='16-64 anos.1',
-            color='Ensino secundário e pós-secundário',
-        ).interactive()
+        st.area_chart(data = df.mean())
+       
 with tab5:
     st.header("Standard Deviation")
 
