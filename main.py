@@ -227,6 +227,11 @@ with tab4:
        
 with tab5:
     st.header("Standard Deviation")
+    col1, col2 = st.columns(2)
+    with col1:
+        st.write(" O resultado da variancia", np.std(df))
+    with col2:
+        st.area_chart(data = np.std(df))
 
 ######FIM DAS TABS
 
