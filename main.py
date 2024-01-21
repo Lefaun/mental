@@ -250,13 +250,13 @@ df = pd.read_csv('Mentalhealth3.csv')
 
 
 
-st.area_chart(data = df.mean()
+st.area_chart(data = df.mean())
 #st.write("____________________________________________________________") 
 
-st.area_chart(data = df.max()
+st.area_chart(data = df.max())
 
 st.write("____________________________________________________________") 
-st.title("Evolução dos Profissionais com ensino Superior")
+st.title("Evolução dos Profissionais com Ensino Superior")
 df = pd.read_csv('Mentalhealth3.csv')
 st.area_chart( df, x="Date1", y='Ensino superior')
 
