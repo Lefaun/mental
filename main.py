@@ -23,7 +23,7 @@ st.write(
 
 with st.sidebar:
     with st.sidebar:
-
+        st.title(" WHY AI FOR HEALTH CARE?")
         st.write(""" 1. Organize and analyze data: A virtual assistant can help organize and analyze large amounts of data related to mental health, such as patient demographics, treatment outcomes, and resource utilization. 2. This can provide valuable insights for healthcare providers and policymakers to improve mental health services.
 
 3. Identify patterns and trends: By using data analysis tools, a virtual assistant can identify patterns and trends in mental health data. 4. This can help identify high-risk populations, common mental health conditions, and areas where resources are lacking.
