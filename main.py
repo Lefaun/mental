@@ -217,16 +217,6 @@ with tab3:
     
 with tab4:
     st.header("The Average Values")
-    st.dataframe(filter_dataframe2(df))
-    chart_data = pd.DataFrame(
-    np.random.randn( 22 , 5),
-    columns=['Mulheres', 'Homens', 'Ensino Superior', 'Desempregados', 'Reformados' ])
-
-
-    #column2=['25','50','75', '80', '100']
-    st.area_chart(chart_data)
-    
-    st.dataframe(filter_dataframe2(df))
     
 
 with tab5:
@@ -236,7 +226,17 @@ with tab5:
 
 
 
+st.dataframe(filter_dataframe2(df))
+chart_data = pd.DataFrame(
+np.random.randn( 22 , 5),
+columns=['Mulheres', 'Homens', 'Ensino Superior', 'Desempregados', 'Reformados' ])
 
+
+#column2=['25','50','75', '80', '100']
+st.area_chart(chart_data)
+
+st.dataframe(filter_dataframe2(df))
+    
 
 st.write("____________________________________________________________")  
 # Example dataframe
