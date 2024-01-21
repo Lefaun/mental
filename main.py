@@ -255,7 +255,7 @@ st.area_chart(data = df.mean())
 st.Title("Evolução dos Valores Máximos")
 chart_data = pd.DataFrame(np.random.randn(20, 3), columns=["2004", "2010", "2020"])
 
-st.line_chart(data= df.max(10))
+st.line_chart(chart_data= df.max())
 
 st.write("____________________________________________________________") 
 st.title("Evolução dos Profissionais com Ensino Superior")
