@@ -242,7 +242,7 @@ st.area_chart(chart_data)
     
 
 st.write("____________________________________________________________")  
-st.Title("Valores Médios do DataSet")
+st.header("Valores Médios do DataSet")
 # Example dataframe
 #df = pd.read_csv('Mentalhealth3.csv')
 
