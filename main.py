@@ -1,6 +1,5 @@
 import pandas as pd
 import streamlit as st
-from vega_datasets import data
 import numpy as np
 import plotly.figure_factory as ff
 import plotly.figure_factory as px
