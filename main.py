@@ -33,7 +33,7 @@ with st.sidebar:
             if user_csv is not None:
                 user_csv.seek(0)
                 df = pd.read_csv(user_csv, low_memory=False)
-        clicked()
+        clicked(button)
         
 def filter_data(df: pd.DataFrame) ->pd.DataFrame:
     options = st.multiselect("escolha a Cena ", options=df.columns)
