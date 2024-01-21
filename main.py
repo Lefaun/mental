@@ -238,7 +238,7 @@ chart_data = pd.DataFrame(
     #column2=['25','50','75', '80', '100']
 st.area_chart(chart_data)
 
-st.divider() 
+st.write("____________________________________________________________")  
 # Example dataframe
 df = pd.read_csv('Mentalhealth3.csv')
 
