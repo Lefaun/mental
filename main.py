@@ -38,8 +38,9 @@ with st.sidebar:
         st.title("Pode Adicionar outro daTa Set em CSV")
         st.write("Apenas Necessita de Adicionar um novos CSV")
             
-        File = st.file_uploader("Adcione aqui dados sobre saúde", type={"csv", "txt"})
-        df = pd.dataframe(File)
+        File = st.file_uploader("Adcione aqui dados sobre saúde", type={"csv"})
+        #df = pd.dataframe(File)
+        df = pd.read_csv(File, low_memory=False)
             
         
 def filter_data(df: pd.DataFrame) ->pd.DataFrame:
