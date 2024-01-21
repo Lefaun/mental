@@ -292,6 +292,10 @@ st.download_button(
    "text/csv",
    key='download-csv'
 )
+
+st.write("_______________________________________________________")
+st.write("Trabalho de Pesquisa e Programação: Paulo Ricardo Monteiro")
+st.write("Formação em Fundamentos de Python Avançado por José Luis Boura")
 #st.line_chart(df, x=df.index, y=["Homens", "Mulheres"])
 
 # Plot!
