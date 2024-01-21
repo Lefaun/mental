@@ -253,8 +253,7 @@ st.area_chart(data = df.mean()
 #st.write("____________________________________________________________") 
 
 
-chart_data = pd.DataFrame(df.max(){'Date1': [2004,2008,2010,2015,2022],
-    'columns':['Mulheres', 'Homens', 'Ensino Superior', 'Desempregados', 'Reformados' ]})
+chart_data = pd.DataFrame(df.max())
 
 
     #column2=['25','50','75', '80', '100']
