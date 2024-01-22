@@ -235,7 +235,7 @@ with tab2:
     st.header("The Maximum Values")
     
    
-    st.write(" O resultado dos  dos Valores Máximos", df.max(), df.columns[["Homens","Desempregados"]])
+    st.write(" O resultado dos  dos Valores Máximos", df.max(), df.rows[["Homens","Desempregados"]])
 with tab3:
     st.header("The Minumum Values")
     st.write(" O resultado dos  dos Valores minimos", df.min())
