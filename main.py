@@ -305,7 +305,7 @@ st.area_chart(chart_data)
 st.write("____________________________________________________________")  
 st.header("Valores Na relação Desempregados / Ensino Superior ")
 # Example dataframe
-#df = pd.read_csv('Mentalhealth3.csv')
+df = pd.read_csv('Mentalhealth3.csv')
 
 df_binary = df[['Desempregados', 'Ensino superior']]
  
