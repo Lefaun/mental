@@ -288,7 +288,7 @@ df_binary.columns = ['Desempregados', 'Ensino superior']
 df_binary.head()
 
 #st.line_chart(x ="Desempregados", y ="Ensino superior", data = df_binary)
-st.line_chart(x1 ="Desempregados", x2 ="Ensino superior", data = df_binary)
+st.line_chart("Desempregados", "Ensino superior", data = df_binary)
 #plt.show()
 
 
