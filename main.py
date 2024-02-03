@@ -298,7 +298,7 @@ arr4 =df.get('Ensino superior')
 marks_list = df['Date1'].tolist()
 
 marks_list2 = df['Desempregados'].tolist()
-s
+
 
 marks_list3 = df['Mulheres'].tolist()
 
