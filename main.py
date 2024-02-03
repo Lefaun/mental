@@ -305,7 +305,13 @@ marks_list3 = df['Mulheres'].tolist()
 
 marks_list4 = df['Ensino superior'].tolist()
 
-chart_data = pd.DataFrame(marks_list,marks_list2,marks_list3,marks_list4, columns=["Desempregados", "Mulheres", "Ensino superior"])
+dict = {'Desempregado': marks_list2, 'Mulheres': marks_list3, 'Ensino superior': marks_list4} 
+    
+df = pd.DataFrame(dict)
+    
+print(df)
+
+chart_data = pd.DataFrame(df, columns=["Desempregados", "Mulheres", "Ensino superior"])
 
 st.line_chart(chart_data)
 
