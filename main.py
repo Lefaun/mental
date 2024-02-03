@@ -283,7 +283,7 @@ st.header("Valores Médios do DataSet")
 
 st.area_chart(data = df.mean())
 st.write("____________________________________________________________") 
-st.heade("Relação com a Situação de Emprego")
+st.header("Relação com a Situação de Emprego")
 #st.header("Evolução dos Valores Máximos")
 #data = pd.DataFrame(np.random.randn(5, 3), columns=["2004", "2010", "2020"])
 
