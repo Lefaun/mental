@@ -296,24 +296,23 @@ arr3  = df.get('Desempregados')
 arr4 =df.get('Ensino superior')
 
 marks_list = df['Date1'].tolist()
-st.write(marks_list)
 
 marks_list2 = df['Desempregados'].tolist()
-st.write("Desempregados")
-st.write(marks_list2)
+s
 
 marks_list3 = df['Mulheres'].tolist()
-st.write("Mulheres")
-st.write(marks_list3)
+
 
 marks_list4 = df['Ensino superior'].tolist()
-st.write("Ensino Superior")
-st.write(marks_list4)
+
+chart_data = pd.DataFrame(marks_list,marks_list2,marks_list3,marks_list4, columns=["Desempregados", "Mulheres", "Ensino superior"])
+
+st.line_chart(chart_data)
 
 # Adding legend for stack plots is tricky.
-plt.plot(marks_list,marks_list2, color='b', label = 'Desempregados')
-plt.plot(marks_list,marks_list3, color='r', label = 'Mulheres')
-plt.plot(marks_list,marks_list4, color='y', label = 'Ensino superior')
+#plt.plot(marks_list,marks_list2, color='b', label = 'Desempregados')
+#plt.plot(marks_list,marks_list3, color='r', label = 'Mulheres')
+#plt.plot(marks_list,marks_list4, color='y', label = 'Ensino superior')
 #plt.plot( color='g', label = 'Desempregados')
 
 
