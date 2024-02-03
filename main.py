@@ -276,7 +276,7 @@ st.area_chart(chart_data)
     
 
 st.write("____________________________________________________________")  
-#st.header("Valores Médios do DataSet")
+st.header("Valores Na relação Desempregados / Ensino Superio do DataSet")
 # Example dataframe
 #df = pd.read_csv('Mentalhealth3.csv')
 
@@ -287,7 +287,8 @@ df_binary.columns = ['Desempregados', 'Ensino superior']
 #display the first 5 rows
 df_binary.head()
 
-st.line_chart(x ="Desempregados", y ="Ensino superior", data = df_binary)
+#st.line_chart(x ="Desempregados", y ="Ensino superior", data = df_binary)
+st.area_chart(data = df_binary)
 #plt.show()
 
 
