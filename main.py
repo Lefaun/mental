@@ -305,7 +305,7 @@ marks_list3 = df['Mulheres'].tolist()
 
 marks_list4 = df['Ensino superior'].tolist()
 
-dict = {'Desempregado': marks_list2, 'Mulheres': marks_list3, 'Ensino superior': marks_list4} 
+dict = {'Desempregados': marks_list2, 'Mulheres': marks_list3, 'Ensino superior': marks_list4} 
     
 df = pd.DataFrame(dict)
     
@@ -323,9 +323,9 @@ st.line_chart(chart_data)
 
 
 #plt.stackplot( marks_list, marks_list2,  colors= ['r', 'g'])
-plt.title('Relação entee Mulheres no Desemprego com o ensino Superio')
-plt.legend()
-plt.show()
+#plt.title('Relação entee Mulheres no Desemprego com o ensino Superio')
+#plt.legend()
+#plt.show()
 
 
 
