@@ -262,10 +262,8 @@ with tab2:
         dict = {'Desempregados': marks_list2, 'Mulheres': marks_list3, 'Ensino superior': marks_list4, 'Homens' : marks_list5} 
         
         df = pd.DataFrame(dict)
-        
-        print(df)
-    
-        chart_data = pd.DataFrame(max(df), columns=["Desempregados", "Mulheres", "Ensino superior", "Homens"])
+        st.write(max(df))
+        chart_data = pd.DataFrame(df, columns=["Desempregados", "Mulheres", "Ensino superior", "Homens"])
     
         st.line_chart(chart_data)
 with tab3:
