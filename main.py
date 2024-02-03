@@ -282,11 +282,47 @@ st.header("Valores Médios do DataSet")
 
 
 st.area_chart(data = df.mean())
-#st.write("____________________________________________________________") 
-st.header("Evolução dos Valores Máximos")
-data = pd.DataFrame(np.random.randn(5, 3), columns=["2004", "2010", "2020"])
+st.write("____________________________________________________________") 
+st.heade("Relação com a Situação de Emprego")
+#st.header("Evolução dos Valores Máximos")
+#data = pd.DataFrame(np.random.randn(5, 3), columns=["2004", "2010", "2020"])
 
-st.line_chart(data= df.max())
+#st.line_chart(data= df.max())
+
+Indx =  df.get('Date1')
+arr1  = df.get('Homens')
+arr2  = df.get('Mulheres')
+arr3  = df.get('Desempregados')
+arr4 =df.get('Ensino superior')
+
+marks_list = df['Date1'].tolist()
+st.write(marks_list)
+
+marks_list2 = df['Desempregados'].tolist()
+st.write("Desempregados")
+st.write(marks_list2)
+
+marks_list3 = df['Mulheres'].tolist()
+st.write("Mulheres")
+st.write(marks_list3)
+
+marks_list4 = df['Ensino superior'].tolist()
+st.write("Ensino Superior")
+st.write(marks_list4)
+
+# Adding legend for stack plots is tricky.
+plt.plot(marks_list,marks_list2, color='b', label = 'Desempregados')
+plt.plot(marks_list,marks_list3, color='r', label = 'Mulheres')
+plt.plot(marks_list,marks_list4, color='y', label = 'Ensino superior')
+#plt.plot( color='g', label = 'Desempregados')
+
+
+#plt.stackplot( marks_list, marks_list2,  colors= ['r', 'g'])
+plt.title('Relação entee Mulheres no Desemprego com o ensino Superio')
+plt.legend()
+plt.show()
+
+
 
 st.write("____________________________________________________________") 
 st.title("Evolução dos Profissionais com Ensino Superior")
