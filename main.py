@@ -11,6 +11,9 @@ from pandas.api.types import (
     is_object_dtype,
 )
 import csv
+from sklearn import preprocessing, svm
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
 
 st.title("Estatísticas da Saúde Mental no Período de 2004 a 2020 ")
 
@@ -273,15 +276,23 @@ st.area_chart(chart_data)
     
 
 st.write("____________________________________________________________")  
-st.header("Valores Médios do DataSet")
+#st.header("Valores Médios do DataSet")
 # Example dataframe
 #df = pd.read_csv('Mentalhealth3.csv')
 
-# plot
+df_binary = df[['Desempregados', 'Ensino superior']]
+ 
+# Taking only the selected two attributes from the dataset
+df_binary.columns = ['Desempregados', 'Ensino superior']
+#display the first 5 rows
+df_binary.head()
+
+sns.lmplot(x ="Desempregados", y ="Ensino superior", data = df_binary, order = 2, ci = None)
+plt.show()
 
 
 
-st.area_chart(data = df.mean())
+#st.area_chart(data = df.mean())
 st.write("____________________________________________________________") 
 st.header("Relação com a Situação de Emprego")
 #st.header("Evolução dos Valores Máximos")
@@ -299,19 +310,19 @@ marks_list = df['Date1'].tolist()
 
 marks_list2 = df['Desempregados'].tolist()
 
-
+marks_list5 = df['Homens'].tolist()
 marks_list3 = df['Mulheres'].tolist()
 
 
 marks_list4 = df['Ensino superior'].tolist()
 
-dict = {'Desempregados': marks_list2, 'Mulheres': marks_list3, 'Ensino superior': marks_list4} 
+dict = {'Desempregados': marks_list2, 'Mulheres': marks_list3, 'Ensino superior': marks_list4, 'Homens' : marks_list5} 
     
 df = pd.DataFrame(dict)
     
 print(df)
 
-chart_data = pd.DataFrame(df, columns=["Desempregados", "Mulheres", "Ensino superior"])
+chart_data = pd.DataFrame(df, columns=["Desempregados", "Mulheres", "Ensino superior", "Homens"])
 
 st.line_chart(chart_data)
 
