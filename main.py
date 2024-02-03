@@ -318,7 +318,7 @@ st.header("Relação com a Situação de Emprego")
 
 #st.line_chart(data= df.max())
 
-Indx =  df.get('Date1')
+Indx =  df.get('Date')
 arr1  = df.get('Homens')
 arr2  = df.get('Mulheres')
 arr3  = df.get('Desempregados')
