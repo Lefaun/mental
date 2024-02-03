@@ -287,8 +287,8 @@ df_binary.columns = ['Desempregados', 'Ensino superior']
 #display the first 5 rows
 df_binary.head()
 
-sns.lmplot(x ="Desempregados", y ="Ensino superior", data = df_binary, order = 2, ci = None)
-plt.show()
+st.line_chart(x ="Desempregados", y ="Ensino superior", data = df_binary, order = 2, ci = None)
+#plt.show()
 
 
 
