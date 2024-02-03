@@ -317,14 +317,14 @@ st.header("Relação com a Situação de Emprego")
 #data = pd.DataFrame(np.random.randn(5, 3), columns=["2004", "2010", "2020"])
 
 #st.line_chart(data= df.max())
-
-Indx =  df.get('Date')
+df = pd.read_csv('Mentalhealth3.csv')
+Indx =  df.get('Date1')
 arr1  = df.get('Homens')
 arr2  = df.get('Mulheres')
 arr3  = df.get('Desempregados')
 arr4 =df.get('Ensino superior')
 
-marks_list = df['Date'].tolist()
+marks_list = df['Date1'].tolist()
 
 marks_list2 = df['Desempregados'].tolist()
 
