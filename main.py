@@ -287,6 +287,16 @@ df_binary.columns = ['Desempregados', 'Ensino superior']
 #display the first 5 rows
 df_binary.head()
 
+marks_list = df['Date1'].tolist()
+
+marks_list2 = df['Desempregados'].tolist()
+
+marks_list5 = df['Homens'].tolist()
+marks_list3 = df['Mulheres'].tolist()
+
+
+marks_list4 = df['Ensino superior'].tolist()
+
 dict = {'Desempregados': marks_list2,  'Ensino superior': marks_list4,} 
     
 df = pd.DataFrame(dict)
