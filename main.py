@@ -287,7 +287,7 @@ df_binary.columns = ['Desempregados', 'Ensino superior']
 #display the first 5 rows
 df_binary.head()
 
-st.line_chart(x ="Desempregados", y ="Ensino superior", data = df_binary, ci = None)
+st.line_chart(x ="Desempregados", y ="Ensino superior", data = df_binary)
 #plt.show()
 
 
