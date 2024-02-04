@@ -52,7 +52,8 @@ with st.sidebar:
 def filter_data(df: pd.DataFrame) ->pd.DataFrame:
     options = st.multiselect("escolha a Cena ", options=df.columns)
     st.write('Voçê selecionou as seguintes opções', options)
-
+    #adicionei aqui uma cena nova
+    df = pd.read_csv('Mentalhealth3.csv')
 def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     """
     Adds a UI on top of a dataframe to let viewers filter columns
