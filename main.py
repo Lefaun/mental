@@ -226,7 +226,7 @@ def filter_dataframe2(df: pd.DataFrame) -> pd.DataFrame:
 st.write("____________________________________________________________") 
 
 
-df7 = pd.read_csv(
+df1 = pd.read_csv(
     "Mentalhealth3.csv"
 )
 #######inicio dAS TABS
