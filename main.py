@@ -226,7 +226,7 @@ def filter_dataframe2(df: pd.DataFrame) -> pd.DataFrame:
 st.write("____________________________________________________________") 
 
 
-df1 = pd.read_csv(
+df = pd.read_csv(
     "Mentalhealth3.csv"
 )
 #######inicio dAS TABS
@@ -243,55 +243,55 @@ with tab2:
         st.write(" O resultado dos  dos Valores Máximos", df1.max())
     with col2:
         
-        df1 = pd.read_csv('Mentalhealth3.csv')
-        Indx =  df1.get('Date1')
-        arr1  = df1.get('Homens')
-        arr2  = df1.get('Mulheres')
-        arr3  = df1.get('Desempregados')
-        arr4 =df1.get('Ensino superior')
+        df = pd.read_csv('Mentalhealth3.csv')
+        Indx =  df.get('Date1')
+        arr1  = df.get('Homens')
+        arr2  = df.get('Mulheres')
+        arr3  = df.get('Desempregados')
+        arr4 =df.get('Ensino superior')
     
-        marks_list = df1['Date1'].tolist()
+        marks_list = df['Date1'].tolist()
     
-        marks_list2 = df1['Desempregados'].tolist()
+        marks_list2 = df['Desempregados'].tolist()
     
-        marks_list5 = df1['Homens'].tolist()
-        marks_list3 = df1['Mulheres'].tolist()
+        marks_list5 = df['Homens'].tolist()
+        marks_list3 = df['Mulheres'].tolist()
     
     
-        marks_list4 = df1['Ensino superior'].tolist()
+        marks_list4 = df['Ensino superior'].tolist()
     
         dict = {'Desempregados': marks_list2, 'Mulheres': marks_list3, 'Ensino superior': marks_list4, 'Homens' : marks_list5} 
         
         df1 = pd.DataFrame(dict)
-        st.write(max(df1))
-        chart_data = pd.DataFrame(df1, columns=["Desempregados", "Mulheres", "Ensino superior", "Homens"])
+        st.write(max(df))
+        chart_data = pd.DataFrame(df, columns=["Desempregados", "Mulheres", "Ensino superior", "Homens"])
     
         st.line_chart(chart_data)
 with tab3:
     st.header("The Minumum Values")
-    st.write(" O resultado dos  dos Valores minimos", df1.min())
+    st.write(" O resultado dos  dos Valores minimos", df.min())
     
 with tab4:
     st.header("The Average Values")
     col1, col2 = st.columns(2)
     with col1:
-        st.write(" O resultado da média dos Valores é", df1.mean())
+        st.write(" O resultado da média dos Valores é", df.mean())
     with col2:
-        st.area_chart(data = df1.mean())
+        st.area_chart(data = df.mean())
        
 with tab5:
     st.header("Standard Deviation")
     col1, col2 = st.columns(2)
     with col1:
-        st.write(" O resultado da variancia", np.std(df1))
+        st.write(" O resultado da variancia", np.std(df))
     with col2:
-        st.area_chart(data = np.std(df1))
+        st.area_chart(data = np.std(df))
 
 ######FIM DAS TABS
 
 
 
-st.dataframe(filter_dataframe2(df1))
+st.dataframe(filter_dataframe2(df))
 chart_data = pd.DataFrame(
 np.random.randn( 22 , 5),
 columns=['Mulheres', 'Homens', 'Ensino Superior', 'Desempregados', 'Reformados' ])
