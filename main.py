@@ -291,7 +291,7 @@ with tab5:
 
 
 
-st.dataframe(filter_dataframe2(df))
+st.dataframe(filter_dataframe2(df1))
 chart_data = pd.DataFrame(
 np.random.randn( 22 , 5),
 columns=['Mulheres', 'Homens', 'Ensino Superior', 'Desempregados', 'Reformados' ])
