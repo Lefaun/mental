@@ -243,7 +243,7 @@ with tab2:
         st.write(" O resultado dos  dos Valores Máximos", df.max())
     with col2:
         
-        df = pd.read_csv('Mentalhealth3.csv')
+        #df = pd.read_csv('Mentalhealth3.csv')
         Indx =  df.get('Date1')
         arr1  = df.get('Homens')
         arr2  = df.get('Mulheres')
