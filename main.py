@@ -243,7 +243,7 @@ with tab2:
         st.write(" O resultado dos  dos Valores Máximos", df.max())
     with col2:
         
-        #df = pd.read_csv('Mentalhealth3.csv')
+        df1 = pd.read_csv('Mentalhealth3.csv')
         Indx =  df.get('Date1')
         arr1  = df.get('Homens')
         arr2  = df.get('Mulheres')
@@ -262,9 +262,9 @@ with tab2:
     
         dict = {'Desempregados': marks_list2, 'Mulheres': marks_list3, 'Ensino superior': marks_list4, 'Homens' : marks_list5} 
         
-        df = pd.DataFrame(dict)
+        df1 = pd.DataFrame(dict)
         st.write(max(df))
-        chart_data = pd.DataFrame(df, columns=["Desempregados", "Mulheres", "Ensino superior", "Homens"])
+        chart_data = pd.DataFrame(df1, columns=["Desempregados", "Mulheres", "Ensino superior", "Homens"])
     
         st.line_chart(chart_data)
 with tab3:
