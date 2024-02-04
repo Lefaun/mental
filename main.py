@@ -53,7 +53,7 @@ def filter_data(df: pd.DataFrame) ->pd.DataFrame:
     options = st.multiselect("escolha a Cena ", options=df.columns)
     st.write('Voçê selecionou as seguintes opções', options)
     #adicionei aqui uma cena nova
-    df = pd.read_csv('Mentalhealth3.csv')
+    #df = pd.read_csv('Mentalhealth3.csv')
 def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     """
     Adds a UI on top of a dataframe to let viewers filter columns
@@ -306,7 +306,7 @@ st.area_chart(chart_data)
 st.write("____________________________________________________________")  
 st.header("Valores Na relação Desempregados / Ensino Superior ")
 # Example dataframe
-df = pd.read_csv('Mentalhealth3.csv')
+df3 = pd.read_csv('Mentalhealth3.csv')
 
 df_binary = df[['Desempregados', 'Ensino superior']]
  
@@ -315,21 +315,21 @@ df_binary.columns = ['Desempregados', 'Ensino superior']
 #display the first 5 rows
 df_binary.head()
 
-marks_list = df['Date1'].tolist()
+marks_list = df3['Date1'].tolist()
 
-marks_list2 = df['Desempregados'].tolist()
+marks_list2 = df3['Desempregados'].tolist()
 
-marks_list5 = df['Homens'].tolist()
-marks_list3 = df['Mulheres'].tolist()
+marks_list5 = df3['Homens'].tolist()
+marks_list3 = df3['Mulheres'].tolist()
 
 
-marks_list4 = df['Ensino superior'].tolist()
+marks_list4 = df3['Ensino superior'].tolist()
 
 dict = {'Desempregados': marks_list2,  'Ensino superior': marks_list4,} 
     
-df = pd.DataFrame(dict)
+df3 = pd.DataFrame(dict)
     
-print(df)
+print(df3)
 
 chart_data = pd.DataFrame(df, columns=["Desempregados",  "Ensino superior", ])
 
@@ -345,28 +345,28 @@ st.header("Relação com a Situação de Emprego")
 #data = pd.DataFrame(np.random.randn(5, 3), columns=["2004", "2010", "2020"])
 
 #st.line_chart(data= df.max())
-df = pd.read_csv('Mentalhealth3.csv')
-Indx =  df.get('Date1')
-arr1  = df.get('Homens')
-arr2  = df.get('Mulheres')
-arr3  = df.get('Desempregados')
-arr4 =df.get('Ensino superior')
+df4 = pd.read_csv('Mentalhealth3.csv')
+Indx =  df4.get('Date1')
+arr1  = df4.get('Homens')
+arr2  = df4.get('Mulheres')
+arr3  = df4.get('Desempregados')
+arr4 =df4.get('Ensino superior')
 
-marks_list = df['Date1'].tolist()
+marks_list = df4['Date1'].tolist()
 
-marks_list2 = df['Desempregados'].tolist()
+marks_list2 = df4['Desempregados'].tolist()
 
-marks_list5 = df['Homens'].tolist()
-marks_list3 = df['Mulheres'].tolist()
+marks_list5 = df4['Homens'].tolist()
+marks_list3 = df4['Mulheres'].tolist()
 
 
-marks_list4 = df['Ensino superior'].tolist()
+marks_list4 = df4['Ensino superior'].tolist()
 
 dict = {'Desempregados': marks_list2, 'Mulheres': marks_list3, 'Ensino superior': marks_list4, 'Homens' : marks_list5} 
     
-df = pd.DataFrame(dict)
+df4 = pd.DataFrame(dict)
     
-print(df)
+print(df4)
 
 chart_data = pd.DataFrame(df, columns=["Desempregados", "Mulheres", "Ensino superior", "Homens"])
 
@@ -388,10 +388,10 @@ st.line_chart(chart_data)
 
 st.write("____________________________________________________________") 
 st.title("Evolução dos Profissionais com Ensino Superior")
-df = pd.read_csv('Mentalhealth3.csv')
-st.area_chart( df, x="Date1", y='Ensino superior')
+df5 = pd.read_csv('Mentalhealth3.csv')
+st.area_chart( df5, x="Date1", y='Ensino superior')
 
-df = pd.DataFrame(
+df5 = pd.DataFrame(
     {"Date1": [2008, 2011, 2018, 2020], "values": [0, 25, 50, 75], "values_2": [15, 25, 45, 85]}
 
 ).set_index("Date1")
@@ -404,7 +404,7 @@ df_all = pd.concat([df, df_new], axis=0)
 st.line_chart(chart_data, x=df.all,)
 st.write("_______________________________________________________")
 
-df = pd.read_csv("Mentalhealth3.csv")
+df6 = pd.read_csv("Mentalhealth3.csv")
 
 @st.experimental_memo
 
@@ -412,7 +412,7 @@ def convert_df(df):
    return df.to_csv(index=False).encode('utf-8')
 
 
-csv = convert_df(df)
+csv = convert_df(df6)
 
 st.download_button(
    "Pode Fazer o Download dos Dados",
