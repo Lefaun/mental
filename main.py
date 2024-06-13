@@ -219,7 +219,7 @@ def filter_dataframe2(df: pd.DataFrame) -> pd.DataFrame:
     
 
 #End
-df = pd.read_csv("MentalHealth3.csv")
+df = pd.read_csv("Mentalhealth3.csv")
 #st.dataframe(filter_dataframe(df))
 st.write("____________________________________________________________") 
 
