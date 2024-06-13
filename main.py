@@ -219,14 +219,14 @@ def filter_dataframe2(df: pd.DataFrame) -> pd.DataFrame:
     
 
 #End
-df = pd.read_csv("Mentalhealth3.csv")
+#df = pd.read_csv("Mentalhealth3.csv")
 #st.dataframe(filter_dataframe(df))
 st.write("____________________________________________________________") 
 
 
-#df = pd.read_csv(
-    #"Mentalhealth3.csv"
-#)
+df = pd.read_csv(
+    "Mentalhealth3.csv"
+)
 #######inicio dAS TABS
 tab1, tab2, tab3, tab4 , tab5 = st.tabs(["The DataFrame","The Maximum Values", "The Minumum Values", "The Average Values", "Standard Deviation"])
 with tab1:
@@ -242,13 +242,12 @@ with tab2:
         #st.write(" O resultado dos  dos Valores Máximos", df.max())
     with col2:
         
-        df = pd.read_csv('Taxa de Desemprego 3.csv')
+        df = pd.read_csv('Mentalhealth3.csv')
         Indx =  df.get('Date1')
         arr1  = df.get('Homens')
         arr2  = df.get('Mulheres')
         arr3  = df.get('Desempregados')
         arr4 =df.get('Ensino superior')
-    
         marks_list = df['Date1'].tolist()
     
         marks_list2 = df['Desempregados'].tolist()
