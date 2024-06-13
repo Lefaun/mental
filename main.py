@@ -53,7 +53,7 @@ def filter_data(df: pd.DataFrame) ->pd.DataFrame:
     options = st.multiselect("escolha a Cena ", options=df.columns)
     st.write('Voçê selecionou as seguintes opções', options)
     #adicionei aqui uma cena nova
-    df = pd.read_csv('Taxa de Desemprego 3.csv')
+    df = pd.read_csv('Mentalhealth3.csv')
 def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     """
     Adds a UI on top of a dataframe to let viewers filter columns
@@ -219,10 +219,10 @@ def filter_dataframe2(df: pd.DataFrame) -> pd.DataFrame:
     
 
 #End
-#df = pd.read_csv(
-    #"MentalHealth.csv"
-#)
-#st.dataframe(filter_dataframe(df))
+df = pd.read_csv(
+    "MentalHealth3.csv"
+)
+st.dataframe(filter_dataframe(df))
 st.write("____________________________________________________________") 
 
 
@@ -245,29 +245,29 @@ with tab2:
     with col2:
         
         df = pd.read_csv('Taxa de Desemprego 3.csv')
-        #Indx =  df.get('Date1')
-        #arr1  = df.get('Homens')
-        #arr2  = df.get('Mulheres')
-        #arr3  = df.get('Desempregados')
-        #arr4 =df.get('Ensino superior')
+        Indx =  df.get('Date1')
+        arr1  = df.get('Homens')
+        arr2  = df.get('Mulheres')
+        arr3  = df.get('Desempregados')
+        arr4 =df.get('Ensino superior')
     
-        #marks_list = df['Date1'].tolist()
+        marks_list = df['Date1'].tolist()
     
-        #marks_list2 = df['Desempregados'].tolist()
+        marks_list2 = df['Desempregados'].tolist()
     
-        #marks_list5 = df['Homens'].tolist()
-        #marks_list3 = df['Mulheres'].tolist()
+        marks_list5 = df['Homens'].tolist()
+        marks_list3 = df['Mulheres'].tolist()
     
     
-        #marks_list4 = df['Ensino superior'].tolist()
+        marks_list4 = df['Ensino superior'].tolist()
     
-        #dict = {'Desempregados': marks_list2, 'Mulheres': marks_list3, 'Ensino superior': marks_list4, 'Homens' : marks_list5} 
+        dict = {'Desempregados': marks_list2, 'Mulheres': marks_list3, 'Ensino superior': marks_list4, 'Homens' : marks_list5} 
         
-        #df1 = pd.DataFrame(dict)
-        ##st.write(max(df))
-        #chart_data = pd.DataFrame(df, columns=["Desempregados", "Mulheres", "Ensino superior", "Homens"])
+        df1 = pd.DataFrame(dict)
+        #st.write(max(df))
+        chart_data = pd.DataFrame(df, columns=["Desempregados", "Mulheres", "Ensino superior", "Homens"])
     
-        #st.line_chart(chart_data)
+        st.line_chart(chart_data)
 with tab3:
     st.header("The Minumum Values")
     st.write(" O resultado dos  dos Valores minimos", df.min())
