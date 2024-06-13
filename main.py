@@ -240,7 +240,8 @@ with tab2:
     
     col1, col2 = st.columns(2)
     with col1:
-        st.write(" O resultado dos  dos Valores Máximos", df.max())
+        st.write("")
+        #st.write(" O resultado dos  dos Valores Máximos", df.max())
     with col2:
         
         df = pd.read_csv('Taxa de Desemprego 3.csv')
