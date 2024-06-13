@@ -243,30 +243,30 @@ with tab2:
         st.write(" O resultado dos  dos Valores Máximos", df.max())
     with col2:
         
-        df = pd.read_csv('Mentalhealth3.csv')
-        Indx =  df.get('Date1')
-        arr1  = df.get('Homens')
-        arr2  = df.get('Mulheres')
-        arr3  = df.get('Desempregados')
-        arr4 =df.get('Ensino superior')
+        df = pd.read_csv('Taxa de Desemprego 3.csv')
+        #Indx =  df.get('Date1')
+        #arr1  = df.get('Homens')
+        #arr2  = df.get('Mulheres')
+        #arr3  = df.get('Desempregados')
+        #arr4 =df.get('Ensino superior')
     
-        marks_list = df['Date1'].tolist()
+        #marks_list = df['Date1'].tolist()
     
-        marks_list2 = df['Desempregados'].tolist()
+        #marks_list2 = df['Desempregados'].tolist()
     
-        marks_list5 = df['Homens'].tolist()
-        marks_list3 = df['Mulheres'].tolist()
+        #marks_list5 = df['Homens'].tolist()
+        #marks_list3 = df['Mulheres'].tolist()
     
     
-        marks_list4 = df['Ensino superior'].tolist()
+        #marks_list4 = df['Ensino superior'].tolist()
     
-        dict = {'Desempregados': marks_list2, 'Mulheres': marks_list3, 'Ensino superior': marks_list4, 'Homens' : marks_list5} 
+        #dict = {'Desempregados': marks_list2, 'Mulheres': marks_list3, 'Ensino superior': marks_list4, 'Homens' : marks_list5} 
         
-        df1 = pd.DataFrame(dict)
-        st.write(max(df))
-        chart_data = pd.DataFrame(df, columns=["Desempregados", "Mulheres", "Ensino superior", "Homens"])
+        #df1 = pd.DataFrame(dict)
+        ##st.write(max(df))
+        #chart_data = pd.DataFrame(df, columns=["Desempregados", "Mulheres", "Ensino superior", "Homens"])
     
-        st.line_chart(chart_data)
+        #st.line_chart(chart_data)
 with tab3:
     st.header("The Minumum Values")
     st.write(" O resultado dos  dos Valores minimos", df.min())
